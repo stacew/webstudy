@@ -1,0 +1,160 @@
+메타 브라우저에 보내는 정보
+<meta charset="UTF-8">
+<meta name="author" content="github.com/stacew"> 
+<meta name="description" content="Stace is a combination of time and space. And W is the web.">
+구글 검색 시, 웹 사이트 설명
+https://support.google.com/webmasters/answer/79812?hl=en
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+
+semantic tag 의미 있는 태그
+<h1>h1 : this is my big title</h1>
+<h6>h6 : this is my small title</h6>
+<section>section :this is an impotant section</section>
+<article>article : 항목, this is an impotant article</article>
+<header>header : this is an impotant header</header>
+<p>p: 문단</p>
+
+non semantic tag 의미 없는 태그
+<div>div : , division, 분할. 아무거나 담는 박스 같은 컨테이너 </div>
+<span>span : 짧은 구간? 텍스트를 위한 컨테이너</span>
+
+태그의 class는 공통 속성
+태그의 id는 고유
+https://www.w3schools.com/html/html5_semantic_elements.asp
+
+
+
+css 기본 -------------------------------
+selector (id, class, tag name){
+    property-name: value;
+}
+
+css inline, external
+inline html 파일에 넣는 것. 모든 html문서 적용 귀찮음
+external 한 줄로 모든 html 문서 적용 가능
+
+박스 모델의 4요소
+컨텐츠,<-패딩->, 보더,<-마진->
+padding
+margin
+border : 상 우 하 좌 시계방향 쉽게 기록 가능
+
+display:
+block, inline-block, inline의 차이점
+block; 큰 박스를 세로로 배치
+inline-block; 큰 박스를 같은 라인에 배치
+inline; : 박스가 사라짐
+
+position: 위치 조정
+static; 전체 위치 고정 (Default)
+fixed; 화면의 변화에 따른 위치 조정
+absolute; 부모가 있으면 부모에 따른 위치 조정, 부모가 없으면 브라우저 화면이 부모
+relative; 자식이 absolute를 사용하려면 부모에 relative 설정이 필수
+
+display: flex;
+플렉스는 사용하면 부모클래가 자식에게 적용
+부모클래스가 플렉시블한 컨테이너가 됨
+.flexfather{
+    display:flex
+    justify-content: center;//space-between;//space-around;
+    align-item:center;//flex-end;
+    flex-direction: column;//row(default)//row-reverse;
+    height:100%;
+    flex-wrap:wrap; 줄 바꿈의 의미. //no-wrap-reverse;
+}
+<div class="flexfather">
+</div>
+자식 스타일에도 flex 걸고, 너비 높이 %로 정해주면 비율대로 따라 움직임.
+http://flexboxfroggy.com/#ko
+
+
+pseudo selector
+
+1. 태그[속성="값"]
+input[type="submit"]{
+    background-color: red;
+}
+<input type="submit">
+
+box중에 첫 번째나 마지막에 적용
+.box:first-child{    
+}
+.box:last-child{    
+}
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+
+2. 무엇:nth-child(2) : 2번째 나온 무엇에 적용
+.box:nth-child(2){
+    background-color: red;
+}
+
+무엇:nth-child(3n) : 3회 마다 무엇에 반복 적용
+무엇:nth-child(2n+1)
+
+형제 관계
+input + .box{
+}
+직계 관계
+input > .box{
+}
+
+//호버링
+.boc:hover{
+}
+//클릭, 더블클릭 활성화 된 경우
+.box:active{
+}
+//클릭하거나 활성화 되었을 때, 포커스가 최우선 적용
+.box:focus{
+}
+
+css 고급 ------------------
+trasition: hover, active, focus, visited 등 상태 변화할 때 효과를 추가
+trasition:background-color
+trasition:all 0.9s ease-in-out 
+//https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+//https://easings.net/en
+
+
+transform: 엘리먼트의 모양을 바꿈
+.box:hover{
+    transform: rotate(20deg);
+    transform: rotate(1turn) scale(.5, .5);
+}
+//https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+
+
+animation:
+.box{
+    animation: 2s myScaleAndRotateSquare ease-in-out;
+    animation: 3s myScaleAndRotateSquare infinite ease-in-out;
+}
+@keyframes myScaleAndRotateSquare{
+    from{
+        transform: none;
+    }
+    to{
+        transform: rotate(1turn) scale(.5, .5);
+    }
+}
+@keyframes myScaleAndRotateSquare{
+    0%{
+        transform: none;
+    }
+    50%{
+        transform: rotate(1turn) scale(.5, .5);
+    }
+    100%{
+        transform: rotate(2turn) scale(1.5, 1.5);
+    }
+}
+
+미디어쿼리 : 브라우저 크기를 알아냄
+@media screen and (min-width:320px) and max-width:640px){
+
+}
+
+
+
