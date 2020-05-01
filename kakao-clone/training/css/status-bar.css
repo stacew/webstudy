@@ -1,0 +1,19 @@
+.status-bar{
+    display: flex;
+    /* flex 걸고, column 좌우로 */
+    justify-content: space-between;    
+    margin-bottom: 30px;
+    
+    /* 글자 투명도 color가능 */
+    /* color:#656565; */
+    opacity: 0.7;
+}
+
+/* icon 사이즈 */
+.status-bar i{ 
+    font-size: 14px;
+}
+
+.status-bar .status-bar__battery-level{
+    margin-left: 5px;
+}

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
         integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Chats | kakao clone</title>
     </title>
 </head>
@@ -24,10 +25,10 @@
         </div>
     </div>
     <header class="header">
-        <div class="heder__header-cloumn">
+        <div class="header__header-cloumn">
             <h1 class="header__title">Chats</h1>
         </div>
-        <div class="heder__header-cloumn">
+        <div class="header__header-cloumn">
             <span class="header__icon">
                 <i class="fas fa-search"></i>
             </span>
@@ -44,17 +45,25 @@
         <ul class="chats__list">
             <li class="chats__chat">
                 <a href="chat.html">
-                    <div class="chat__column">
-                        <img class="chat__avatar g-avatar" src="images/avatar.png">
-                        <div class="chat__content">
-                            <span class="chat__username">
-                                Lynn
-                            </span>
-                            <span class="chat__preview">Going home!!!</span>
+                    <div class="chats__chat friend">
+                        <div class="friend__column">
+                            <img src="images/avatar.png" alt="" class="m-avatar friend__avatar">
+                            <div class="friend__content">
+                                <span class="friend__name">
+                                    김태희
+                                </span>
+                                <span class="friend__bottom-text">
+                                    복동이 보셧나요?
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="chat__column">
-                        <span class="chat__timestamp">Yesterday</span>
+                        <div class="friend__column">
+                            <div class="friend__now-listening">
+                                <span class="chat__timestamp">
+                                    March 8
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </a>
             </li>
@@ -64,15 +73,21 @@
 
     <nav class="nav">
         <ul class="nav__list">
-            <li class="nav__list-item"><a href="friends.html" class="nav__list-link">
-                    <i class="fas fa-user"></i></a></li>
-            <li class="nav__list-item"><a href="index.html" class="nav__list-link">
-                    <i class="fas fa-comment"></i></a></li>
-            <li class="nav__list-item"><a href="find.html" class="nav__list-link">
-                    <i class="fas fa-search"></i></a></li>
-            <li class="nav__list-item"><a href="more.html" class="nav__list-link">
-                    <i class="fas fa-ellipsis-h"></i></a></li>
-
+            <li class="nav__list-item">
+                <a href="friends.html" class="nav__list-link">
+                    <i class="fas fa-user"></i>
+                </a></li>
+            <li class="nav__list-item">
+                <a href="index.html" class="nav__list-link">
+                    <div class="nav__badge">8</div>
+                    <i class="fas fa-comment"> </i>
+                </a></li>
+            <li class="nav__list-item">
+                <a href="find.html" class="nav__list-link">
+                    <i class="fas fa-search"> </i></a> </li>
+            <li class="nav__list-item">
+                <a href="more.html" class="nav__list-link">
+                    <i class="fas fa-ellipsis-h"> </i></a> </li>
         </ul>
     </nav>
 </body>

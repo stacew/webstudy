@@ -1,0 +1,29 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    /* 글자의 중앙선 정렬 */
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header .header__title{
+    font-size:24px;
+    /* 구글에서 받은 폰트 bold:600, Open+Sans:wght@400;600 */
+    font-weight: 600;
+}
+
+.header .header__icon {
+    font-size:20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.header .header__header-cloumn {
+    display: flex;
+    align-items: center;
+}
+
+.header .header__back-btn{
+    font-size: 22px;
+    margin-right: 20px;
+}

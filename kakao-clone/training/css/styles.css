@@ -1,0 +1,28 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+@import "status-bar.css";
+@import "header.css";
+@import "nav-bar.css";
+@import "friend.css";
+@import "friends.css";
+@import "find.css";
+@import "more.css";
+
+* {
+  /* padding을 추가해도 box의 크기를 늘이지 않도록. */
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  padding: 10px 20px;
+  color: #020202;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+a {
+  /* 부모요소와 색깔을 똑같이 함 */
+  color: inherit;
+  text-decoration: none;
+}
