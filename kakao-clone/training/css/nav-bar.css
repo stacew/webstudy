@@ -38,3 +38,18 @@
     align-items: center;
     border-radius: 40%;
 }
+
+@keyframes showNavBar{
+    from{
+        transform:  translateY(100px);
+    }
+    to{
+        transform: none;
+    }
+}
+
+.nav{
+    transform:  translateY(100px);
+    animation: showNavBar 0.5s ease-out forwards;
+    animation-delay: 1s;
+}
