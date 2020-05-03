@@ -1,0 +1,34 @@
+body{
+  background-color: rgb(184, 218, 184);
+}
+
+.js-clock__title {
+  font-size: 100px;
+}
+
+.form,
+.greeting {
+  display: none;
+}
+
+.showing {
+  display: block;
+}
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 0.5;
+  }
+}
+.bgImage{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+  animation: fadeIn 0.5s linear;
+}
