@@ -1,14 +1,21 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "ES2015",
-        "sourceMap": true,
-        "outDir": "dist"
-    },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+  "compilerOptions": {
+    "target": "ES2015", // 컴파일 후 변환될 ECMA스크립트 버전
+    "sourceMap": true, //map 파일은 컴파일과정에서 typescript와 javascript의 파일간 연결 정보를 가지고 있습니다.
+    "module": "commonjs", //outFile 옵션 사용시 commonjs는 사용 할수 없다
+    "outDir": "dist", // 컴파일 결과를 저장할 디렉토리를 지정합니다.
+    // "outFile": "dist/out.js",여러개의 typescript파일을 컴파일을 거쳐 하나의 파일로 만들때 사용합니다.
+    "strict": true, // true이면 엄격한 타입 검사 모드를 활성화 한다.
+    "noImplicitAny": true, // any 타임으로 암묵적 형 변환 여부를 결정, 기본 : false
+    //false : type을 지정하지 않으면 any 타입이 붙습니다
+    //true : type을 지정하지 않으면 컴파일시 에러가 납니다.
+    "esModuleInterop": true, //ECMA스크립트 모듈과 상호 운영성을 가능하게하는 속성으로
+    //true이면 CommonJS모듈을 디폴트 모듈처럼 호출 할수 있다.
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -13,20 +13,11 @@ cmd에서는 되는데, vscode에서 yarn이나 tsc 명령에서 보안 오류 �
 
 1. vs code로 프로젝트 폴더 열기
 
-2. tsconfig.json 생성 후 작성
-{
-"complierOptions": {
-    "module": "commonjs", //?
-    "target": "ES2015", //js 변환 버전
-    "sourceMap": true, //?
-	"outdir" : "dist" //변환 파일을 이 폴더로
-},
-"include": ["src/**/*"], //src 하위 폴더 전부 변환 작업
-"exclude": ["node_modules"] //어떤 노드 모듈도 설치 하지 않아도 제외 해두는게 좋다..?
-}
+2. tsconfig.json 생성 후 작성, 작성법은 참조
 
-4. 실제 index.ts 파일 생성 후 타입스크립트 언어 사용
-4 - 테스트 . > tsc //3번 파일이 있기 때문에 입력되면 index.js파일이 추가된다.
+
+3. 실제 index.ts 파일 생성 후 타입스크립트 언어 사용
+3 - 테스트 . > tsc //3번 파일이 있기 때문에 입력되면 index.js파일이 추가된다.
 
 5. > npm init
 //package.json 생성
@@ -47,4 +38,46 @@ package.json 재 수정
 
 
 > npm start 하면 이제 부터 저장할 때마다 갱신 작업 진행
+
+
+
+-------------- typescript 이론 --------------
+--- interface 처리 방식 ---
+js로 변환하면 interface가 없음.
+interface human {
+    name: string;
+    age: number;
+}
+
+1.함수 파라미터를 보호 가능.
+function sayHi(potato: human) : string {
+}
+
+2. Person 구조체(?)를 보호 가능.
+const person: human = {
+    name: "yslee",
+    age: 33,
+}
+
+---  class 처리 방식 ---
+js class는 멤버 변수 정의가 없음.
+class human {
+    public name: string;
+    private age: number;
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+    public GetAge(): number {
+        return this.age;
+    }
+};
+
+
+
+---  block chain ---
+
+npm add crypto-js
+
+
 

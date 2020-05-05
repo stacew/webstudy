@@ -10,7 +10,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "crypto-js": "^4.0.0"
+  },
   "devDependencies": {
     "tsc-watch": "^4.2.3"
   }
