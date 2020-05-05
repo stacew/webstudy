@@ -1,0 +1,50 @@
+cmd에서는 되는데, vscode에서 yarn이나 tsc 명령에서 보안 오류 출력 시,
+> Set-ExecutionPolicy Unrestricted  //세팅
+> ExecutionPolicy                   //확인
+출처: https://extbrain.tistory.com/118
+
+
+-----------------타입스크립트 설치 방법-----------------
+1. nodejs 설치
+2. > npm install -g typescript //명령어로 노드모듈에 타입스크립트 전역 설치
+
+-----------------타입 스크립트 사용 방법-----------------
+0. yarn(= facebook이 개발한 npm?) 설치 안 하고, nodejs 내장 npm만 쓴 방법
+
+1. vs code로 프로젝트 폴더 열기
+
+2. tsconfig.json 생성 후 작성
+{
+"complierOptions": {
+    "module": "commonjs", //?
+    "target": "ES2015", //js 변환 버전
+    "sourceMap": true, //?
+	"outdir" : "dist" //변환 파일을 이 폴더로
+},
+"include": ["src/**/*"], //src 하위 폴더 전부 변환 작업
+"exclude": ["node_modules"] //어떤 노드 모듈도 설치 하지 않아도 제외 해두는게 좋다..?
+}
+
+4. 실제 index.ts 파일 생성 후 타입스크립트 언어 사용
+4 - 테스트 . > tsc //3번 파일이 있기 때문에 입력되면 index.js파일이 추가된다.
+
+5. > npm init
+//package.json 생성
+
+6. > npm start
+//yarn은 자동으로 yarn start 시, tsc 명령과 node index.js가 동작한다.( package.json "main"을 추적한 것? )
+//npm start하려면 package.json Script를 추가해줘야 한다.
+//"scripts":{ "start": "tsc && node index.js" //node "main" 같은 걸 찾아 봤는데 없음. 중복 파일 들어감..
+
+
+-----------------tsc-watch 설치 방법-----------------
+> npm install ts-watch -d
+
+package.json 재 수정
+//"scripts":{ "start": "tsc && node index.js"
+//"scripts":{"start": "tsc-watch --onSuccess \" node dist/index.js\" --compiler %USERPROFILE%\\AppData\\Roaming\\npm\\tsc",
+//뒤에 --compiler %USERPROFILE%\\AppData\\Roaming\\npm\\tsc 잘 모르겠음.
+
+
+> npm start 하면 이제 부터 저장할 때마다 갱신 작업 진행
+
